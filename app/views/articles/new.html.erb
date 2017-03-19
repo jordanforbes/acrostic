@@ -1,0 +1,10 @@
+<%= form_for @article do |f| %>
+
+	<%= f.label :word %> <br />
+	<%= f.text_field :word %> <br />
+
+	<%= f.label :length %> <br />
+	<%= f.text_field :length %> <br />
+
+	<%= f.submit 'save'%>
+<%end%>
