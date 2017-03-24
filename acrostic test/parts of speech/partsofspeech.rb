@@ -31,7 +31,8 @@ end
 #constructor
 
 
-def randword(input) #finds a random word for each letter of one word
+#finds a random word for each letter of one word
+def randword(input) 
 	#letters = converter(@library)
 	inarr= input.split("")
 	length= input.length
@@ -39,6 +40,7 @@ def randword(input) #finds a random word for each letter of one word
 	lib= ["@noun_library","@verb_library","@adverb_library","@adjective_library"]
 	num=0
 
+	#finds a random number based on the length of the library
 	def random(words)
 		unless words == nil
 			return [rand(0...words.length)][0] #returns a random number from 0 to the length of the array entered.
@@ -66,13 +68,15 @@ def randword(input) #finds a random word for each letter of one word
 	fin_arr.join(" ")
 
 
-end #end randword
+end 
 
+#insert a phrase to be acrosticized 
 def phrase(phrase)
 	w= phrase.split(" ")
 	fin_arr=[]
 	w.each do |word|
-		fin_arr<<randword(word)
+
+		fin_arr<<randword(word) #calls the randword method on each word in the phrase
 	end
 
 	fin_arr.join(" ")
