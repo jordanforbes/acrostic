@@ -1,34 +1,80 @@
 require "./partsfunctions"
+require "./adverblibrary"
+require "./nounlibrary"
+require "./verblibrary"
+require "./adjectivelibrary"
 
 def constructor
 	def random(obj)
 		return [rand(0...obj.length)]
 	end
-	noun = @parts[:noun]
+	noun = @noun_library[:b]
 	pronoun = @parts[:pronoun]
-	verb = @parts[:verb]
-	adverb = @parts[:adverb]
-	adjective = @parts[:adjective]
+	verb = @verb_library[:a]
+	adverb = @adverb_library[:a]
+	adjective = @adjective_library[:a]
+
 	article = @parts[:article]
 	conjunction = @parts[:conjunction]
 	preposition = @parts[:preposition]
 	interjection = @parts[:interjection]
 
-	 ranoun= random(noun)
-	 rapro= random(pronoun)
-	 raverb= random(verb)
-	 raadv= random(adverb)
-	 raadj= random(adjective)
-	 raart= random(article)
-	 raconj= random(conjunction)
-	 raprep= random(preposition)
-	 rainter= random(interjection)
+	
 
 
-	 finword= "#{pronoun[rapro[0]]} #{verb[raverb[0]]} #{conjunction[raconj[0]]} #{article[raart[0]]} #{adjective[raadj[0]]} #{noun[ranoun[0]]}".downcase
+	 finword= "#{pronoun[random(pronoun)[0]]} #{adjective[random(adjective)[0]]} #{noun[random(noun)[0]]} #{conjunction[random(conjunction)[0]]} #{pronoun[random(pronoun)[0]]} #{verb[random(verb)[0]]} #{adjective[random(adjective)[0]]}".downcase
 	 finword[0]=finword[0].upcase
 	 p finword
 	 
 end
 
-constructor
+#constructor
+
+
+def randword(input) #finds a random word for each letter of one word
+	#letters = converter(@library)
+	inarr= input.split("")
+	length= input.length
+	x= input
+	lib= ["@noun_library","@verb_library","@adverb_library","@adjective_library"]
+	num=0
+
+	def random(words)
+		unless words == nil
+			return [rand(0...words.length)][0] #returns a random number from 0 to the length of the array entered.
+		end
+
+	end
+	fin_arr=[]
+
+	inarr.each do |l|
+		if num>lib.length-1
+			num = 0
+		end
+
+		if l != "'"
+			letter_arr= eval(lib[num]+"[:"+l+"]") #a method which creates an array for each letter out of possible words
+			r= random(letter_arr)
+
+			unless r == nil
+			fin_arr<<letter_arr[r]
+			num+=1
+			end
+		end
+		
+	end 
+	fin_arr.join(" ")
+
+
+end #end randword
+
+def phrase(phrase)
+	w= phrase.split(" ")
+	fin_arr=[]
+	w.each do |word|
+		fin_arr<<randword(word)
+	end
+
+	fin_arr.join(" ")
+end
+
