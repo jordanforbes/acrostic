@@ -1,51 +1,43 @@
 class Transformer < ApplicationRecord
+	# def initialize(input)
+	# 	@input = input
+	# end
+
+		include Nounable
+		include Adjectivable
+		include Verbable
+		include Adverbable
 
 	def transformer
-		require "./partsofspeech/partsfunctions"
-		require "./partsofspeech/adverblibrary"
-		require "./partsofspeech/nounlibrary"
-		require "./partsofspeech/verblibrary"
-		require "./partsofspeech/adjectivelibrary"
+		# require_relative "/partsofspeech/partsfunctions"
+		# require_relative "/partsofspeech/adverblibrary"
+		# require_relative "/partsofspeech/nounlibrary"
+		# require_relative "/partsofspeech/verblibrary"
+		# require_relative "/partsofspeech/adjectivelibrary"
 
-		def constructor
-			def random(obj)
-				return [rand(0...obj.length)]
+
+		def phrase(input) 		#insert a phrase to be acrosticized 
+			w= self.input.split(" ")
+			fin_arr=[]
+
+			w.each do |word|
+				fin_arr<<randword(word) #calls the randword method on each word in the phrase
 			end
-			noun = @noun_library[:b]
-			pronoun = @parts[:pronoun]
-			verb = @verb_library[:a]
-			adverb = @adverb_library[:a]
-			adjective = @adjective_library[:a]
 
-			article = @parts[:article]
-			conjunction = @parts[:conjunction]
-			preposition = @parts[:preposition]
-			interjection = @parts[:interjection]
-
-			
-
-
-			 finword= "#{pronoun[random(pronoun)[0]]} #{adjective[random(adjective)[0]]} #{noun[random(noun)[0]]} #{conjunction[random(conjunction)[0]]} #{pronoun[random(pronoun)[0]]} #{verb[random(verb)[0]]} #{adjective[random(adjective)[0]]}".downcase
-			 finword[0]=finword[0].upcase
-			 p finword
-			 
+			fin_arr.join(" ")
 		end
 
-		#constructor
+		def randword(input) 	#finds a random word for each letter of one word
 
-
-		#finds a random word for each letter of one word
-		def randword(input) 
-			#letters = converter(@library)
 			inarr= input.split("")
 			length= input.length
 			x= input
-			lib= ["@noun_library","@verb_library","@adverb_library","@adjective_library"]
+			lib= ["@@noun_library","@@verb_library","@@adverb_library","@@adjective_library"]
 			num=0
 
-			#finds a random number based on the length of the library
-			def random(words)
-				unless words == nil
+			def random(words) #finds a random number based on the length of the library
+
+				unless words == nil #makes sure that the words are valid
 					return [rand(0...words.length)][0] #returns a random number from 0 to the length of the array entered.
 				end
 
@@ -71,20 +63,10 @@ class Transformer < ApplicationRecord
 			fin_arr.join(" ")
 
 
-		end 
+		end 	
 
-		#insert a phrase to be acrosticized 
-		def phrase(phrase)
-			w= phrase.split(" ")
-			fin_arr=[]
-			w.each do |word|
-
-				fin_arr<<randword(word) #calls the randword method on each word in the phrase
-			end
-
-			fin_arr.join(" ")
-		end
-
-		phrase(word)
+		phrase(@input)
 	end
 end
+
+# Result = Transformer.new("lol")

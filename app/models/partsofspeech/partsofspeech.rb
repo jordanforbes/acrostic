@@ -82,5 +82,5 @@ def phrase(phrase)
 	fin_arr.join(" ")
 end
 
-p phrase("lol")
+p phrase("logomachists outtell landward")
 

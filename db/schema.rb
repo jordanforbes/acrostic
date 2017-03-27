@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20170324194559) do
   end
 
   create_table "transformers", force: :cascade do |t|
+    t.string "input"
+    t.string "result"
   end
 
   create_table "users", force: :cascade do |t|

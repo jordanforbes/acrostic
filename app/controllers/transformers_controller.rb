@@ -1,5 +1,6 @@
-class TransformerController < ApplicationController
+class TransformersController < ApplicationController
 	def index
+		@transform= Transformer.yo
 	end
 
 	def create
