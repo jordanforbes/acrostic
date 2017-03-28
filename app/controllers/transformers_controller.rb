@@ -21,5 +21,9 @@ class TransformersController < ApplicationController
 	end
 
 	def transform
+		@transform= Transformer.new.phrase(params[:phrase])
+		render "transformer.js.erb"
+		#@retransform= Transformer.new.phrase()
+
 	end
 end

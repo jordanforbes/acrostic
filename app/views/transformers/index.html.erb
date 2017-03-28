@@ -1,5 +1,18 @@
 <div class="container">
 	<div>
-	hi
+	<%= form_tag("/transform", remote: true) do %>
+		<%= text_field_tag :phrase,nil, class:"word" %>	
+
+		<%= submit_tag 'make accrostic' %>
+	<% end %>>
+	<div class="storage">
+	</div>
+		<%= tag("/transform", remote: true) do %>
+		<%= submit_tag 're-roll' %>
+		<%end%>
+	<div class="vomit">
+	</div>
+	<button type= 'button' class='redo'>reroll</button>
+	
 	 </div>
 </div>
