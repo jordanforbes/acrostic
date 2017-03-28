@@ -1,7 +1,8 @@
-# require_relative "adverblibrary"
-# require_relative "nounlibrary"
-# require_relative "verblibrary"
-# require_relative "adjectivelibrary"
+require "./partsfunctions"
+require "./adverblibrary"
+require "./nounlibrary"
+require "./verblibrary"
+require "./adjectivelibrary"
 
 
 
@@ -24,7 +25,7 @@ def randword(input)
 	inarr= input.split("")
 	length= input.length
 	x= input
-	lib= ["@@noun_library","@@verb_library","@@adverb_library","@@adjective_library"]
+	lib= ["@noun_library","@verb_library","@adverb_library","@adjective_library"]
 	num=0
 
 	#finds a random number based on the length of the library
