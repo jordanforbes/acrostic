@@ -60,7 +60,7 @@ def randword(input)
 
 end 
 
-p phrase("logomachists outtell landward")
+p phrase("foobar")
 
 
 

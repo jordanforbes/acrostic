@@ -3,10 +3,10 @@ class Transformer < ApplicationRecord
 	# 	@input = input
 	# end
 
-		include Nounable
-		include Adjectivable
-		include Verbable
-		include Adverbable
+		# include Nounable
+		# include Adjectivable
+		# include Verbable
+		# include Adverbable
 
 	def transformer
 		# require_relative "/partsofspeech/partsfunctions"

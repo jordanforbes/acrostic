@@ -1,0 +1,42 @@
+@import "colors";
+
+.mynav{
+	background-color:$navbarcolor;
+	height:80px;
+}
+
+nav{
+	height:80px;
+	
+	.acrosstik{
+		margin:10px;
+		font-size:70px;
+		.across{
+		color:white;
+					
+					//font-family: 'Quicksand', sans-serif;
+					//font-family: 'Amatic SC', cursive;
+					//font-family: 'Text Me One', sans-serif;
+					//font-family: 'Asar', serif;
+					//font-family: 'Six Caps', sans-serif;
+					font-family: 'Roboto', sans-serif;
+
+
+		}
+		// font-family: 'Just Another Hand', cursive;
+		// font-family: 'Pacifico', cursive;
+		// font-family: 'Press Start 2P', cursive;
+		 //font-family: 'Quicksand', sans-serif;
+		// font-family: 'Amatic SC', cursive;
+		//font-family: 'Sue Ellen Francisco', cursive;
+		// font-family: 'Text Me One', sans-serif;
+		// font-family: 'Asar', serif;
+		.tik{
+			color:$titlecolor;
+					font-family: 'Just Another Hand', cursive;
+
+		}
+
+	}
+
+}
