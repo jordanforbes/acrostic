@@ -20,6 +20,13 @@ $("document").ready(function(){
 		$(".word").val($(".storage").text())
 		$(".roll").trigger("click")
 	})
+
+	$(".reset").click(function(){
+		$(".word").val("")
+		$(".vomit").empty()
+		$(".storage").empty()
+		$(".vomit").css("display","none")
+	})
 	
 })
 
