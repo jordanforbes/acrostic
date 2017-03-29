@@ -1,16 +1,42 @@
 <div class="container">
 	<div>
-	<%= form_tag("/transform", remote: true) do %>
-		<%= text_field_tag :phrase,nil, class:"word" %>	
+		<div class="row">
+			<div class="col-md-1">
+				<%= form_tag("/transform", remote: true) do %>
+					<%= submit_tag 'acrosstize!', class:"roll btn" %>
+			</div>
+			<div class="col-md-10">
+					<%= text_area_tag :phrase,nil, class:"word", cols: 40, rows: 5%>
 
-		<%= submit_tag 'make accrostic' %>
-	<% end %>
-	<div class="storage">
-	</div>
-		
-	<div class="vomit">
-	</div>
-	<!-- <button type= 'button' class='redo'>reroll</button> -->
+			<% end %>
+			</div>
+			<div class="col-md-1">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-1">
+				<%= form_tag("/transform",remote: true) do %>
+					<%=submit_tag 'reroll', class:'btn redo' %>
+				<%end%>
+			</div>
+			<div class="col-md-10">
+				<div contenteditable="true" tag="oldphrase"class="holder storage">
+				</div>
+			</div>
+			<div class="col-md-1">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-1">
+				
+			</div>
+			<div class="col-md-10">
+				<div contenteditable="true" class=" vomit">
+				</div>
+			</div>
+			<div class="col-md-1">
+			</div>
+		</div>
 	
 	 </div>
 </div>

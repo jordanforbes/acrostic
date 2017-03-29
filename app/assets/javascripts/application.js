@@ -17,7 +17,8 @@
 
 $("document").ready(function(){
 	$(".redo").click(function(){
-		alert($(".vomit").text())
+		$(".word").val($(".storage").text())
+		$(".roll").trigger("click")
 	})
 	
 })
