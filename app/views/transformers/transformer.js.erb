@@ -3,7 +3,17 @@ $(".storage").empty()
 $(".storage").append("<%= params[:phrase] %>")
 $(".vomit").empty()
 $(".vomit").append("<%= @transform %>")
+// $(".vomit").click(function(){
+// 	vom= $(".vomit").text().split(" ");
+// 	$.each(vom, function(i,v){
+// 		$(".vomit").append("<span class='eachword'>"+v+"</span>")
+		
+// 		})
+// 	// console.log(vom)
+// 	// console.log(vom.length)
+// })
 // $(".vomit").append("<button type= 'button' class='redo'>reroll</button>")
+// $(jquery).each
 $(".word").val(
 	$(".vomit").text()
 	)

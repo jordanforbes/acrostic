@@ -27,7 +27,11 @@ $("document").ready(function(){
 		$(".storage").empty()
 		$(".vomit").css("display","none")
 	})
-	
+	$(".eachword").click(function(){
+		alert("hi")
+		// $("this").css("display","none")
+	})
 })
+
 
 
