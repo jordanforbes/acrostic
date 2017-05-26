@@ -44,7 +44,6 @@ gem 'rack-cors', :require => 'rack/cors'
 
 gem 'taps'
 
-gem 'ruby' "2.4.1"
 
 
 
