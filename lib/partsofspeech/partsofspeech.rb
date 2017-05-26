@@ -6,62 +6,62 @@
 
 
 #insert a phrase to be acrosticized 
-def phrase(phrase)
-	w= phrase.split(" ")
-	fin_arr=[]
-	w.each do |word|
+# def phrase(phrase)
+# 	w= phrase.split(" ")
+# 	fin_arr=[]
+# 	w.each do |word|
 
-		fin_arr<<randword(word) #calls the randword method on each word in the phrase
-	end
+# 		fin_arr<<randword(word) #calls the randword method on each word in the phrase
+# 	end
 
-	fin_arr.join(" ")
-end
+# 	fin_arr.join(" ")
+# end
 
 
-#finds a random word for each letter of one word
-def randword(input) 
-	#letters = converter(@library)
-	inarr= input.split("")
-	length= input.length
-	x= input
-	lib= ["@@noun_library","@@verb_library","@@adverb_library","@@adjective_library"]
-	num=0
+# #finds a random word for each letter of one word
+# def randword(input) 
+# 	#letters = converter(@library)
+# 	inarr= input.split("")
+# 	length= input.length
+# 	x= input
+# 	lib= ["@@noun_library","@@verb_library","@@adverb_library","@@adjective_library"]
+# 	num=0
 
-	#finds a random number based on the length of the library
+# 	#finds a random number based on the length of the library
 
-	fin_arr=[]
+# 	fin_arr=[]
 
-	inarr.each do |l|
-		if num>lib.length-1
-			num = 0
-		end
+# 	inarr.each do |l|
+# 		if num>lib.length-1
+# 			num = 0
+# 		end
 
-		if l != "'" #makes sure that words beginning with an apostrophe don't break the method
+# 		if l != "'" #makes sure that words beginning with an apostrophe don't break the method
 			
-			letter_arr= eval(lib[num]+"[:"+l+"]") #a method which creates an array for each letter out of possible words
+# 			letter_arr= eval(lib[num]+"[:"+l+"]") #a method which creates an array for each letter out of possible words
 			
-			r= random(letter_arr)
+# 			r= random(letter_arr)
 
-			unless r == nil
-			fin_arr<<letter_arr[r]
-			num+=1
-			end
-		end
+# 			unless r == nil
+# 			fin_arr<<letter_arr[r]
+# 			num+=1
+# 			end
+# 		end
 		
-	end 
-	fin_arr.join(" ")
+# 	end 
+# 	fin_arr.join(" ")
 
 
-end 
+# end 
 
-def random(words)
-	unless words == nil #makes sure that the words are valid
-		return [rand(0...words.length)][0] #returns a random number from 0 to the length of the array entered.
-	end
+# def random(words)
+# 	unless words == nil #makes sure that the words are valid
+# 		return [rand(0...words.length)][0] #returns a random number from 0 to the length of the array entered.
+# 	end
 
-end
+# end
 
-p phrase("foobar")
+# p phrase("foobar")
 
 
 
