@@ -45,6 +45,8 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'taps'
 
  gem 'thin'
+ gem "heroku"
+
 
 
 # Use Capistrano for deployment
